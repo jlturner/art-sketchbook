@@ -14,7 +14,7 @@ PShape logo;
 PGraphics logoMask;
 
 void setup() {
-  size(5000,5000,OPENGL);
+  size(5000,5000);
   
   logo  = loadShape("urx-logo.svg");
   logo.disableStyle();
@@ -39,8 +39,10 @@ void setup() {
 }
 
 void draw() {
-  for(int x = 0; x < width; x++) {
-   for(int y = 0; y < height; y++) {
+  PGraphics output = createGraphics(width,height);
+  output.loadPixels();
+  for(int y = 0; y < height; y++) {
+    for(int x = 0; x < width; x++) {
      color c;
      float distanceToClosestRegion = width;
      for(Region r : regions) {
@@ -49,9 +51,15 @@ void draw() {
         distanceToClosestRegion = distance;
        } 
      }
-     c = color(map(distanceToClosestRegion, 0, 100, 0, 255));
-     set(x, y, c);
+     c = color(map(distanceToClosestRegion, 0, 50, 150, 0));
+     if(logoMask.pixels[y * width + x] == color(255)) {
+       int variance = round(map(distanceToClosestRegion, 0, 50, 0, 150));
+       c = color(variance, 120 + variance, 200 + variance);
+     }
+     output.pixels[y * width + x] = c;
    } 
+   println(y);
   }
-  save("output.png");
+  output.updatePixels();
+  output.save("output.png");
 }
