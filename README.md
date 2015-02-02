@@ -2,6 +2,9 @@
 
 #### Copyright James Lawrence Turner, 2015, All Rights Reserved
 
+## Voronoi Germs (Text Only) [Sun Feb 1, 2015]
+![Voronoi Germs(Text Only)](/voronoi_germs_text_only/output.png?raw=true)
+
 ## Voronoi Germs [Sun Feb 1, 2015]
 ![Voronoi Germs](/voronoi_germs/output.png?raw=true)
 
