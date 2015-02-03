@@ -2,6 +2,9 @@
 
 #### Copyright James Lawrence Turner, 2015, All Rights Reserved
 
+## Angel Camoflage [Mon Feb 2, 2015]
+![Angel Camoflage](/angel_camoflage/output.png?raw=true)
+
 ## Voronoi [Mon Feb 2, 2015]
 ![Voronoi](/voronoi/output.png?raw=true)
 
